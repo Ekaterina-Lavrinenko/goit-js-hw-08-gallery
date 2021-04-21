@@ -32,6 +32,7 @@ class Gallery {
       .join('');
     this.addMarkup(markup);
   }
+    
   addMarkup(markup) {
     this.galleryRef.insertAdjacentHTML('afterbegin', markup);
     this.galleryRef.addEventListener('click', e => {
@@ -84,12 +85,12 @@ class Gallery {
     this.lightBoxImgRef.src = src;
     this.lightBoxImgRef.alt = alt;
   }
+    
   onCloseLigthBoxBtnClick() {
     this.lightBoxRef.classList.remove('is-open');
     this.addImageLigthbox('', '');
     this.deleteEventListeners();
   }
-
 
   addEventListeners() {
     this.overlayRef.addEventListener('click', this.onCloseLigthBoxBtnClick);
@@ -105,3 +106,4 @@ class Gallery {
 
 const gallery = new Gallery(imagesRefs, '.js-gallery');
 gallery.startRenderGallery();
+
